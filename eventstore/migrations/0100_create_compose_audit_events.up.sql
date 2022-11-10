@@ -1,3 +1,7 @@
+-- "migration" written before we had proper migration handling, hence the
+-- various attempts at mitigating previously existing objects
+
+BEGIN;
 
 CREATE TABLE IF NOT EXISTS compose_audit_events (
 	id SERIAL,
@@ -24,4 +28,6 @@ DO $$ BEGIN
 EXCEPTION
 	WHEN duplicate_object THEN RAISE NOTICE 'constraint already exists';
 END; $$;
+
+COMMIT;
 
