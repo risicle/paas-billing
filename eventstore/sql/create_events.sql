@@ -282,7 +282,7 @@ ALTER TABLE events_temp ALTER COLUMN duration SET NOT NULL;
 ALTER TABLE events_temp ALTER COLUMN plan_guid SET NOT NULL;
 ALTER TABLE events_temp ALTER COLUMN plan_name SET NOT NULL;
 
-ALTER TABLE events_temp ADD CONSTRAINT events_temp_pkey PRIMARY KEY event_guid;
+ALTER TABLE events_temp ADD CONSTRAINT events_temp_pkey PRIMARY KEY ( event_guid );
 
 CREATE INDEX events_org_temp_idx ON events_temp (org_guid);
 CREATE INDEX events_space_temp_idx ON events_temp (space_guid);
