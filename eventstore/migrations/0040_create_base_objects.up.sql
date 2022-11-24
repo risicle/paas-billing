@@ -208,6 +208,7 @@ CREATE TABLE pricing_plan_components (
 );
 CREATE TRIGGER tgr_ppc_validate_formula BEFORE INSERT OR UPDATE ON pricing_plan_components FOR EACH ROW EXECUTE PROCEDURE validate_formula();
 
+-- superseded in 0130_parallel_barriers.up.sql
 CREATE OR REPLACE FUNCTION uuid_or_placeholder(str text)
 RETURNS uuid AS $$
 BEGIN
