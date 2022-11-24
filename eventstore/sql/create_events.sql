@@ -1,7 +1,7 @@
 -- extract useful stuff from usage events
 -- we treat both apps and services as "resources" so normalize the fields
 -- we normalize states to just STARTED/STOPPED because we treat consecutive STARTED to mean "update"
-CREATE TABLE events_temp with
+CREATE TABLE events_temp AS WITH
 	raw_events as (
 		(
 			select
