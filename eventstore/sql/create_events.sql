@@ -174,8 +174,6 @@ CREATE TABLE events_temp with
 				order by created_at, event_sequence
 				rows between unbounded preceding and current row
 			)
-		order by
-			created_at, event_sequence
 	),
 	event_ranges as (
 		select
@@ -270,8 +268,6 @@ CREATE TABLE events_temp with
 	where
 		state = 'STARTED'
 		and not isempty(duration)
-	order by
-		event_sequence, event_guid
 ;
 
 ALTER TABLE events_temp ALTER COLUMN event_guid SET NOT NULL;
