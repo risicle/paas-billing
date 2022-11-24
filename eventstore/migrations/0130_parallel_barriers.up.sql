@@ -3,8 +3,6 @@
 BEGIN;
 
 
-DROP FUNCTION pg_size_bytes;
-
 CREATE OR REPLACE FUNCTION uuid_or_placeholder(str text)
 RETURNS uuid AS $$
 BEGIN
